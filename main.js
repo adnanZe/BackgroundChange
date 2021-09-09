@@ -1,19 +1,47 @@
-function randomChangeBgColor(){
-  // store all random numbers for red, green, blue and transparency(alpha)
-  let redOne = Math.floor(Math.random() * 256);
-  let greenOne = Math.floor(Math.random() * 256);
-  let blueOne = Math.floor(Math.random() * 256);
-  let alphaOne = Math.random() * 1;
+const spanDisplay = document.querySelector('.display');
+const angleNumber = angle => {
+  return Math.floor(Math.random() * angle);
+};
 
-  let redTwo = Math.floor(Math.random() * 256);
-  let greenTwo = Math.floor(Math.random() * 256);
-  let blueTwo = Math.floor(Math.random() * 256);
-  let alphaTwo = Math.random() * 1;
+const backgroundRGBA = {
+  name: 'RedGreenBlueAlpha',
+  changeIntensity: () => {
+    return Math.floor(Math.random() * 256);
+  },
+  changeTransparency: () => {
+    return Math.random();
+  },
+  concat: function() {
+    return 'rgba(' + this.changeIntensity() + ', ' + this.changeIntensity() + ', ' + this.changeIntensity() + ', ' + this.changeTransparency() + ')';
+  },
+  addRGBAwithDOM: function(){
+    return [document.body.style.background = this.concat(), spanDisplay.innerHTML = this.concat()];
+  }
+};
 
-  // store random number for angle of direction (if number equal with 0deg is equivalent for "to top", 90deg is equivalent for "to right" and so on)
+const backgroundHEX = {
+  name: 'Hexadecimal',
+  hex: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'],
+  getHexValue: function() {
+    return this.hex[Math.floor(Math.random() * this.hex.length)];
+  },
+  concat: function(){
+    return '#' + this.getHexValue() + this.getHexValue() + this.getHexValue() + this.getHexValue() + this.getHexValue() + this.getHexValue();
+  },
+  addHEXwithDOM: function(){
+    return [document.body.style.background = this.concat(), spanDisplay.innerHTML = this.concat()];
+  }
+};
 
-  let degNumber = Math.floor(Math.random() * 360);
-
-  // insert with DOM from JS to HTML/CSS: property and rgba values
-  document.body.style.background = 'linear-gradient(' + degNumber +'deg, rgba(' + redOne + ', ' + greenOne + ', ' + blueOne + ', ' + alphaOne + '), rgba(' + redTwo + ', ' + greenTwo + ', ' + blueTwo + ', ' + alphaTwo + ')' ;
-}
+const backgroundHSL = {
+  name: 'HueSaturationLightness',
+  randomValue: (number) =>{
+    return Math.floor(Math.random() * number);
+  },
+  concat: function(){
+    return 'hsl(' + this.randomValue(360) + ', ' + this.randomValue(101) + '%, ' + this.randomValue(101) + '%)';
+  },
+  addHSLwithDOM: function(){
+    return [document.body.style.background = this.concat(), spanDisplay.innerHTML = this.concat()];
+  }
+};

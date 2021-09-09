@@ -9,6 +9,14 @@
   <script src="main.js" defer></script>
 </head>
 <body>
-  <button onclick="randomChangeBgColor()">Change background</button>
+  <main>
+    <button onclick="backgroundRGBA.addRGBAwithDOM()">Change background RGBA</button>
+    <button onclick="backgroundHEX.addHEXwithDOM()">Change background HEX</button>
+    <button onclick="backgroundHSL.addHSLwithDOM()">Change background HSL</button>
+  </main>
+  <article>
+    <span class="display">Value of color in RGBA/HEX/HSL</span>
+  </article>
 </body>
 </html>
+
