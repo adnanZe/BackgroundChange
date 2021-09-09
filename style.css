@@ -55,3 +55,8 @@ button::selection{
   background: none;
 }
 
+span::selection{
+  outline: none;
+  background: black;
+}
+
