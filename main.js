@@ -3,6 +3,8 @@ const angleNumber = angle => {
   return Math.floor(Math.random() * angle);
 };
 
+var x = 2;
+
 const backgroundRGBA = {
   name: 'RedGreenBlueAlpha',
   changeIntensity: () => {
