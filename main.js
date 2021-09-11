@@ -9,14 +9,16 @@ const backgroundRGBA = {
     return Math.floor(Math.random() * 256);
   },
   changeTransparency: () => {
-    return Math.random();
+    return Math.random().toFixed(2);
   },
-  concat: function() {
-    return 'rgba(' + this.changeIntensity() + ', ' + this.changeIntensity() + ', ' + this.changeIntensity() + ', ' + this.changeTransparency() + ')';
+  magicHappen: () => {
+    let x = [];
+    for(i = 0; i < 3; i++){
+      x += backgroundRGBA.changeIntensity() + ', ';
+    };
+    let color = 'rgba(' + x + backgroundRGBA.changeTransparency() + ')';
+    return [document.body.style.background = color, spanDisplay.innerHTML = color];
   },
-  addRGBAwithDOM: function(){
-    return [document.body.style.background = this.concat(), spanDisplay.innerHTML = this.concat()];
-  }
 };
 
 const backgroundHEX = {
@@ -25,12 +27,13 @@ const backgroundHEX = {
   getHexValue: function() {
     return this.hex[Math.floor(Math.random() * this.hex.length)];
   },
-  concat: function(){
-    return '#' + this.getHexValue() + this.getHexValue() + this.getHexValue() + this.getHexValue() + this.getHexValue() + this.getHexValue();
+  magicHappen: () =>{
+    let color = '#';
+    for(i = 0; i < 6; i++){
+      color += backgroundHEX.getHexValue();
+    }
+    return [document.body.style.background = color, spanDisplay.innerHTML = color]
   },
-  addHEXwithDOM: function(){
-    return [document.body.style.background = this.concat(), spanDisplay.innerHTML = this.concat()];
-  }
 };
 
 const backgroundHSL = {
