@@ -6,7 +6,7 @@ Short description:
 
 - HSL, RGBA, HSL each are stored in object;
 
-- watch here :eyes:: https://adnanze.github.io/BackgroundChange/
+- watch here :eyes:: https://adnanze.github.io/ChangeBackground/
 
 :iphone: :heavy_check_mark:
 :computer: :heavy_check_mark:
