@@ -1,6 +1,6 @@
 # Change Background 
 
-Short description:
+:clipboard: Short description:
 
 :pushpin: with button we can generate random background color for HEX, RGBA and HSL;
 
