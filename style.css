@@ -3,7 +3,7 @@
 body{
   margin: 0;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -11,14 +11,14 @@ body{
   transition: 0.5s linear;
 }
 
-main{
+.btn-container{
   display: flex;
   justify-content: space-around;
   width: inherit;
 }
 
-article{
-  display: inherit;
+.display{
+  display: inline-block;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
   font-size: 1.8rem;
@@ -60,3 +60,34 @@ span::selection{
   background: black;
 }
 
+@media screen  and (max-width: 900px){
+  .btn-container {
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .display{
+    font-size: 1.2rem;
+    padding: .7rem
+  }
+  button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .display{
+    text-align: center;
+    font-size: 1rem;
+    padding: .5rem;
+    width: 80%;
+  }
+  .btn-container {
+    width: 70%;
+    height: 70%;
+  }
+}
