@@ -6,6 +6,4 @@ Short description:
 
 - HSL, RGBA, HSL each are stored in object;
 
-- Now is displayed on web page via span tag;
-
-- try here: https://adnanze.github.io/BackgroundChange/
+- watch here :eyes:: https://adnanze.github.io/BackgroundChange/
